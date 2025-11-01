@@ -22,8 +22,10 @@ class FirTest {
         System.out.println(new FirNumSum().calc(0)); // 0
 
         //Should be 120
-        System.out.println(firTest.test(firNum, 5));
         System.out.println(new FirNumFactorial().calc(5));
+
+        System.out.println(new FirNumMultiplyOdd().calc(4)); // 3
+        System.out.println(new FirNumMultiplyOdd().calc(5)); // 15
     }
 }
 class FirNumSum extends FirNum {
@@ -33,12 +35,21 @@ class FirNumSum extends FirNum {
     }
 }
 class FirNumFactorial extends FirNum {
-
     @Override
     public int calc(int n) {
         int result = 1;
         for (int i = 1; i <= n ; i++) {
             result *= i;
+        }
+        return result;
+    }
+}
+class FirNumMultiplyOdd extends FirNum {
+    @Override
+    public int calc(int n) {
+        int result = 1;
+        for (int i = 1; i <= n ; i+=2) {
+                result *= i;
         }
         return result;
     }
