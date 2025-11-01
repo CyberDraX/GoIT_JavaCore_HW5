@@ -29,6 +29,9 @@ class FirTest {
 
         //Should be 83
         System.out.println(new FirNumFizzBuzz().calc(20));
+
+        //Should be 10
+        System.out.println(new FirNumBasis().calc(9));
     }
 }
 class FirNumSum extends FirNum {
@@ -73,5 +76,17 @@ class FirNumFizzBuzz extends FirNum {
             }
         }
         return result;
+    }
+}
+class FirNumBasis extends FirNum {
+    @Override
+    public int calc(int n) {
+        int result = 0;
+        for (int i = 0; i <= n; i++) {
+            if (i % 2 == 0) {
+                result += i;
+            }
+        }
+        return result / 2;
     }
 }
