@@ -7,8 +7,15 @@ class Launcher {
     }
 }
 class Spaceport {
-    public void launch() {
+    private GasStation gasStation = new GasStation();
 
+    public void launch() {
+        gasStation.refuel();
+    }
+}
+class GasStation {
+    public void refuel() {
+        System.out.println("Refuel done!");
     }
 }
 
